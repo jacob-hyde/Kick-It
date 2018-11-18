@@ -31,9 +31,9 @@ class WelcomeView extends React.Component {
                 buttonContainer={{alignSelf: 'flex-end', marginBottom: 40}}
                 onPress={() => {
                   this.props.didAcceptTerms();
-                  this.props.setInitialSwitch('Auth');
-                  this.props.setInitialView('AuthView');
-                  this.props.navigation.navigate('Auth');
+                  // this.props.setInitialSwitch('Auth');
+                  // this.props.setInitialView('PinCreate');
+                  this.props.navigation.push('PinCreateView');
                 }}
               >
               I Accept

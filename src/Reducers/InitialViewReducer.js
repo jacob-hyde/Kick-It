@@ -4,7 +4,7 @@ import {
 } from './../Actions/Types';
 
 const INITIAL_STATE = {
-  switch: 'Auth',
+  switch: 'Setup',
   view: 'WelcomeView'
 };
 
