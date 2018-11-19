@@ -22,6 +22,6 @@ const persistedReducer = persistReducer(persistConfig, reducers);
 
 export default () => {
   let store = createStore(persistedReducer, undefined, compose(applyMiddleware(...middleware)))
-  let persistor = persistStore(store)
+  let persistor = persistStore(store);
   return { store, persistor }
 }

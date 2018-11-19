@@ -1,0 +1,13 @@
+{
+  "extends": "rallycoding",
+  "rules": {
+    "no-useless-concat": "off",
+    "object-curly-spacing": "off",
+    "arrow-body-style": "off",
+    "space-before-blocks": "off",
+    "keyword-spacing": "off",
+    "no-underscore-dangle": "off",
+    "no-else-return": "off",
+    "global-require": "off"
+  }
+}

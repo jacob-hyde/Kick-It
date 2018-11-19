@@ -7,3 +7,4 @@ export * from './FormGroup';
 export * from './Section';
 export * from './Row';
 export * from './Title';
+export * from './SectionHeader';

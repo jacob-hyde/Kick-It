@@ -5,6 +5,7 @@ import NavigationService from './NavigationService';
 import DrawerMenu from './Components/DrawerMenu';
 import WelcomeView from './Screens/Welcome';
 import PinCreateView from './Screens/Welcome/PinCreate';
+import SetupView from './Screens/Setup';
 import AuthView from './Screens/Auth';
 import Home from './Screens/Home';
 
@@ -17,6 +18,12 @@ const SetupStack = createStackNavigator({
   },
   PinCreateView: {
     screen: PinCreateView,
+    navigationOptions: () => ({
+      header: null
+    })
+  },
+  SetupView: {
+    screen: SetupView,
     navigationOptions: () => ({
       header: null
     })

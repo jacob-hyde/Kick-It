@@ -6,6 +6,7 @@ import {View, Image, TouchableOpacity} from 'react-native';
 import {Container, Button, Section, Row} from './../../Components/Common';
 import {didAcceptTerms} from './../../Actions/SetupActions';
 import {setInitialView, setInitialSwitch} from './../../Actions/InitialViewActions';
+import {setCurrentForm} from './../../Actions/CurrentFormActions';
 
 class WelcomeView extends React.Component {
 
@@ -33,7 +34,8 @@ class WelcomeView extends React.Component {
                   this.props.didAcceptTerms();
                   // this.props.setInitialSwitch('Auth');
                   // this.props.setInitialView('PinCreate');
-                  this.props.navigation.push('PinCreateView');
+                  this.props.setCurrentForm('setup');
+                  this.props.navigation.navigate('SetupView');
                 }}
               >
               I Accept
@@ -57,4 +59,4 @@ const styles = {
 };
 
 
-export default connect(null, {didAcceptTerms, setInitialSwitch, setInitialView})(WelcomeView);
+export default connect(null, {didAcceptTerms, setInitialSwitch, setInitialView, setCurrentForm})(WelcomeView);
