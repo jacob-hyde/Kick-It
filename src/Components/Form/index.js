@@ -5,6 +5,8 @@ import {Text} from 'react-native-elements';
 import {Field } from 'redux-form';
 import {Form, FormGroup} from './../Common';
 import Select from './Types/Select';
+import Input from './Types/Input';
+import DateInput from './Types/DateInput';
 
 class FormWrapper extends React.Component{
 
@@ -31,6 +33,34 @@ class FormWrapper extends React.Component{
                     />
                   </View>
                 );
+        case 'number':
+          return (
+                  <View style={styles.formLayout}>
+                    {label}
+                    <Field
+                      name={field.name}
+                      placeholder={field.placeholder}
+                      containerStyle={styles.fieldStyle}
+                      component={Input}
+                      key={field.key}
+                      inputStyle={{textAlign: 'right'}}
+                      number
+                    />
+                  </View>
+                );
+          case 'date':
+            return (
+                  <View style={styles.formLayout}>
+                    {label}
+                    <Field
+                      name={field.name}
+                      placeholder={field.placeholder}
+                      containerStyle={styles.fieldStyle}
+                      component={DateInput}
+                      key={field.key}
+                    />
+                  </View>
+                );
         default:
           return;
       }
@@ -39,7 +69,7 @@ class FormWrapper extends React.Component{
     const createFields = (group) => {
       return group.map((field) => {
         return (
-          createField(field)
+          <FormGroup>{createField(field)}</FormGroup>
         );
       });
     };
@@ -47,7 +77,7 @@ class FormWrapper extends React.Component{
     return(
       <Form>
         {this.props.fields.map((group) => {
-          return <FormGroup>{createFields(group)}</FormGroup>;
+          return createFields(group);
         })}
       </Form>
     );
@@ -67,7 +97,6 @@ const styles = StyleSheet.create({
   },
   labelStyle: {
     flex: 1
-
   },
   fieldStyle: {
     flex: 1,

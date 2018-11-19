@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   },
   subtitleStyle: {
     flex: 1,
-    fontSize: 14,
+    fontSize: 12,
     textAlign: 'right'
   }
 });

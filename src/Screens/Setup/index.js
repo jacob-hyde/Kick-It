@@ -10,6 +10,13 @@ import {setCurrentForm} from './../../Actions/CurrentFormActions';
 
 class SetupView extends React.Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+      today: new Date()
+    }
+  }
+
   render(){
     return (
       <View style={{flex: 1}}>
@@ -38,9 +45,34 @@ class SetupView extends React.Component {
                       {
                         name: 'starting_dose',
                         type: 'number',
-                        placeholder: 'mg',
+                        label: 'Starting Dose:',
+                        placeholder: '40mg',
                         key: 'startDose'
                       }
+                    ]
+                  ]
+                }
+              />
+            </Section>
+            <Section>
+              <SectionHeader
+                title="Taper Schedule"
+                subtitle="You can customize this later"
+                underline
+              />
+            </Section>
+            <Section containerStyle={{marginTop: 0}}>
+              <Form
+                fields={
+                  [
+                    [
+                      {
+                        name: 'start_date',
+                        type: 'date',
+                        label: 'Starting Date:',
+                        placeholder: this.state.today,
+                        key: 'startDate'
+                      },
                     ]
                   ]
                 }

@@ -34,7 +34,7 @@ class Input extends React.Component{
 
   render(){
     return(
-      <View style={styles.containerStyle}>
+      <View style={[styles.containerStyle, this.props.containerStyle || {}]}>
         {this.renderIcon()}
         <TextInput
           onBlur={this.onSelected.bind(this)}
@@ -47,6 +47,7 @@ class Input extends React.Component{
           value={this.props.input.value}
           onChangeText={this.props.input.onChange}
           placeholderTextColor='#ecf0f1'
+          keyboardType={this.props.number ? 'number-pad' : 'defaultff44'}
         />
       </View>
     );
@@ -60,7 +61,6 @@ const styles = {
     paddingRight: 5,
     paddingLeft: 5,
     fontSize: 16,
-    lineHeight: 23,
     flex: 2,
     fontFamily: 'Roboto-Regular',
   },
@@ -81,9 +81,7 @@ const styles = {
     flex: 1
   },
   containerStyle: {
-    flex: 1,
-    height: 40,
-    flexDirection: 'row',
+    height: 40
   }
 };
 
