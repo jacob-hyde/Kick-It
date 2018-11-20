@@ -73,6 +73,14 @@ class SetupView extends React.Component {
                         placeholder: this.state.today,
                         key: 'startDate'
                       },
+                      {
+                        name: 'step_length',
+                        type: 'scrollableSelect',
+                        label: 'Step Length:',
+                        placeholder: '2 Weeks',
+                        values: ['1 Week', '2 Weeks'],
+                        key: 'startDate'
+                      },
                     ]
                   ]
                 }
