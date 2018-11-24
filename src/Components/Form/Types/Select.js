@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {Icon, Picker} from 'native-base';
+import ScrollableSelect from 'react-native-scrollable-select';
 
 class Select extends React.Component{
 
@@ -13,8 +14,25 @@ class Select extends React.Component{
   }
 
   render(){
+    if(this.props.scrollable){
+      return (
+        <View style={[styles.containerStyle, this.props.containerStyle || {}]}>
+          <ScrollableSelect
+            onSelect={this.props.input.onChange}
+            labelValue={this.props.input.value}
+            style={styles.pickerStyle}
+            placeholder='1 Week'
+            values={this.props.values}
+            customStyles={{
+              inputStyle:{borderWidth: 0},
+              mask: {width: '100%'}
+            }}
+          />
+        </View>
+      );
+    }
     return (
-      <View style={[styles.containerStyle, this.props.containerStyle || {}]}>
+      <View style={[styles.containerStyle, {paddingLeft: 5}, this.props.containerStyle || {}]}>
         <Picker
         selectedValue={this.props.input.value}
         onValueChange={this.props.input.onChange}

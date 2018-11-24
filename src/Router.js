@@ -6,10 +6,17 @@ import DrawerMenu from './Components/DrawerMenu';
 import WelcomeView from './Screens/Welcome';
 import PinCreateView from './Screens/Welcome/PinCreate';
 import SetupView from './Screens/Setup';
+import TaperTypeView from './Screens/Setup/TaperType';
 import AuthView from './Screens/Auth';
 import Home from './Screens/Home';
 
 const SetupStack = createStackNavigator({
+  TaperTypeView: {
+    screen: TaperTypeView,
+    navigationOptions: () => ({
+      title: 'Taper Type'
+    })
+  },
   WelcomeView: {
     screen: WelcomeView,
     navigationOptions: () => ({
@@ -28,6 +35,9 @@ const SetupStack = createStackNavigator({
       header: null
     })
   }
+  // TaperTypeView: {
+  //   screen: TaperTypeView
+  // }
 });
 
 const AuthStack = createStackNavigator({

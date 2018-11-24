@@ -61,6 +61,21 @@ class FormWrapper extends React.Component{
                     />
                   </View>
                 );
+            case 'scrollableSelect':
+              return (
+                <View style={styles.formLayout}>
+                  {label}
+                  <Field
+                    name={field.name}
+                    placeholder={field.placeholder}
+                    containerStyle={[styles.fieldStyle, {paddingLeft: 0}]}
+                    component={Select}
+                    key={field.key}
+                    values={field.values}
+                    scrollable
+                  />
+                </View>
+              );
         default:
           return;
       }
@@ -101,8 +116,7 @@ const styles = StyleSheet.create({
   fieldStyle: {
     flex: 1,
     borderColor: '#ddd',
-    borderWidth: 1,
-    paddingLeft: 5
+    borderWidth: 1
   }
 });
 
